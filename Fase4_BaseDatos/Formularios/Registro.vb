@@ -1,4 +1,6 @@
 ﻿Public Class Registro
+    Dim actualizar As Boolean
+
     Private Sub Registro_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'TallerDBLocalDataSet1.EstudiantesTabla' table. You can move, or remove it, as needed.
         Me.EstudiantesTablaTableAdapter.Fill(Me.TallerDBLocalDataSet1.EstudiantesTabla)
@@ -23,17 +25,29 @@
             estudiante.Nombre = txtNombre.Text
             estudiante.Apellido = txtApellido.Text
             estudiante.Correo = txtCorreo.Text
+            estudiante.Telefono = txtTelefono.Text
             estudiante.Escuela = cmbEscuela.SelectedValue
             estudiante.Contrasena = Encriptar.Encriptar(txtPassword.Text)
             Dim persistir As New PersistenciaEstudiante
-            Dim resultado = persistir.InsertarEstudiante(estudiante)
+            Dim resultado As TransaccionBD
+
+            If actualizar Then
+                resultado = persistir.ActualizarEstudiante(estudiante)
+            Else
+                resultado = persistir.InsertarEstudiante(estudiante)
+            End If
+
             If resultado.Resultado Then
-                MessageBox.Show("Estudiante Creado", "Proceso exitoso")
-                Me.Close()
+                If actualizar Then
+                    MessageBox.Show("Estudiante Actualizado", "Proceso exitoso")
+                Else
+                    MessageBox.Show("Estudiante Creado", "Proceso exitoso")
+                End If
             Else
                 MessageBox.Show(String.Join("\n", resultado.Errores), "Error al guardar")
             End If
-
+            Registro_Load(Nothing, Nothing)
+            btnNuevoEstudiante_Click(Nothing, Nothing)
         End If
     End Sub
 
@@ -57,17 +71,15 @@
             lblPasswordNoCoincide.Visible = True
         End If
 
-
         If lblRequeridoApellido.Visible Or
-            lblRequeridoCorreo.Visible Or
-            lblRequeridoEscuela.Visible Or
-            lblRequeridoIdentificacion.Visible Or
-            lblRequeridoNombre.Visible Or
-            lblRequeridoTelefono.Visible Or
-            lblRequeridoPassword.Visible Or
-            lblRequeridoPasswordConfirmar.Visible Or
-            lblPasswordNoCoincide.Visible Then
-
+                    lblRequeridoCorreo.Visible Or
+                    lblRequeridoEscuela.Visible Or
+                    lblRequeridoIdentificacion.Visible Or
+                    lblRequeridoNombre.Visible Or
+                    lblRequeridoTelefono.Visible Or
+                    lblRequeridoPassword.Visible Or
+                    lblRequeridoPasswordConfirmar.Visible Or
+                    lblPasswordNoCoincide.Visible Then
             lblRequeridos.Visible = True
         End If
 
@@ -81,4 +93,81 @@
             lblRequiereEntrada.Visible = True
         End If
     End Function
+
+    Private Sub dataGridUsers_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dataGridUsers.CellContentClick
+        If e.ColumnIndex = 0 Then
+            ModificarRegistro(e.RowIndex)
+        ElseIf e.ColumnIndex = 1 Then
+            EliminarRegistro(e.RowIndex)
+        End If
+    End Sub
+
+    Private Sub EliminarRegistro(rowIndex As Integer)
+        Dim identificacion = Long.Parse(dataGridUsers.Rows(rowIndex).Cells(2).Value)
+        If identificacion = 2021 Then
+            MessageBox.Show("No puede eliminar el administrador", "Acción inválida")
+            Return
+        End If
+
+        Dim resultado = PersistenciaEstudiante.EliminarEstudiante(identificacion)
+        If resultado.Resultado Then
+            MessageBox.Show("El estudiante se ha eliminado correctamente", "Proceso exitoso")
+        Else
+            MessageBox.Show("Ha ocurrido un error en la eliminación", "Proceso no terminado")
+        End If
+
+        Registro_Load(Nothing, Nothing)
+    End Sub
+
+    Private Sub ModificarRegistro(rowIndex As Integer)
+        Dim registro = dataGridUsers.Rows(rowIndex).Cells
+
+        txtIdentificacion.Text = ObtenerValor(registro(2).Value)
+
+        txtNombre.Text = ObtenerValor(registro(3).Value)
+        txtApellido.Text = ObtenerValor(registro(4).Value)
+        txtCorreo.Text = ObtenerValor(registro(5).Value)
+        txtTelefono.Text = ObtenerValor(registro(6).Value)
+        cmbEscuela.SelectedValue = ObtenerValor(registro(8).Value)
+        txtPassword.Text = ""
+        txtPasswordConfirmacion.Text = ""
+
+        actualizar = True
+        ModificarIdentificacionEnable()
+    End Sub
+
+    Function ModificarIdentificacionEnable()
+        txtIdentificacion.Enabled = Not actualizar
+    End Function
+
+    Function ObtenerValor(valorBD As Object) As String
+        If IsDBNull(valorBD) Then
+            Return ""
+        End If
+        Return valorBD
+    End Function
+
+    Private Sub FillByToolStripButton_Click(sender As Object, e As EventArgs) Handles FillByToolStripButton.Click
+        Try
+            Me.EstudiantesTablaTableAdapter.FillBy(Me.TallerDBLocalDataSet.EstudiantesTabla)
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub btnNuevoEstudiante_Click(sender As Object, e As EventArgs) Handles btnNuevoEstudiante.Click
+        actualizar = False
+        ModificarIdentificacionEnable()
+
+        txtIdentificacion.Text = ""
+
+        txtNombre.Text = ""
+        txtApellido.Text = ""
+        txtCorreo.Text = ""
+        txtTelefono.Text = ""
+        cmbEscuela.SelectedIndex = 0
+        txtPassword.Text = ""
+        txtPasswordConfirmacion.Text = ""
+    End Sub
 End Class

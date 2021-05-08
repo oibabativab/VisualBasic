@@ -160,6 +160,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>tallerDBLocalDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="tallerDBLocalDataSet.vb">
+      <DependentUpon>tallerDBLocalDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Utilitarios\Encriptar.vb" />
     <Compile Include="Utilitarios\Simple3Des.vb" />
   </ItemGroup>

@@ -986,6 +986,8 @@ Partial Public Class tallerDBLocalDataSet
         
         Private columnNombre_Escuela As Global.System.Data.DataColumn
         
+        Private columnIdEscuela As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -1070,6 +1072,14 @@ Partial Public Class tallerDBLocalDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property IdEscuelaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnIdEscuela
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -1106,9 +1116,9 @@ Partial Public Class tallerDBLocalDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddEstudiantesTablaRow(ByVal Identificación As Long, ByVal Nombre As String, ByVal Apellido As String, ByVal Correo_electrónico As String, ByVal Teléfono As String, ByVal Nombre_Escuela As String) As EstudiantesTablaRow
+        Public Overloads Function AddEstudiantesTablaRow(ByVal Identificación As Long, ByVal Nombre As String, ByVal Apellido As String, ByVal Correo_electrónico As String, ByVal Teléfono As String, ByVal Nombre_Escuela As String, ByVal IdEscuela As Integer) As EstudiantesTablaRow
             Dim rowEstudiantesTablaRow As EstudiantesTablaRow = CType(Me.NewRow,EstudiantesTablaRow)
-            Dim columnValuesArray() As Object = New Object() {Identificación, Nombre, Apellido, Correo_electrónico, Teléfono, Nombre_Escuela}
+            Dim columnValuesArray() As Object = New Object() {Identificación, Nombre, Apellido, Correo_electrónico, Teléfono, Nombre_Escuela, IdEscuela}
             rowEstudiantesTablaRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowEstudiantesTablaRow)
             Return rowEstudiantesTablaRow
@@ -1143,6 +1153,7 @@ Partial Public Class tallerDBLocalDataSet
             Me.columnCorreo_electrónico = MyBase.Columns("Correo electrónico")
             Me.columnTeléfono = MyBase.Columns("Teléfono")
             Me.columnNombre_Escuela = MyBase.Columns("Nombre Escuela")
+            Me.columnIdEscuela = MyBase.Columns("IdEscuela")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1160,6 +1171,8 @@ Partial Public Class tallerDBLocalDataSet
             MyBase.Columns.Add(Me.columnTeléfono)
             Me.columnNombre_Escuela = New Global.System.Data.DataColumn("Nombre Escuela", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnNombre_Escuela)
+            Me.columnIdEscuela = New Global.System.Data.DataColumn("IdEscuela", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIdEscuela)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnIdentificación}, true))
             Me.columnIdentificación.AllowDBNull = false
             Me.columnIdentificación.Unique = true
@@ -1605,6 +1618,21 @@ Partial Public Class tallerDBLocalDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property IdEscuela() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableEstudiantesTabla.IdEscuelaColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'IdEscuela' in table 'EstudiantesTabla' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableEstudiantesTabla.IdEscuelaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsNombreNull() As Boolean
             Return Me.IsNull(Me.tableEstudiantesTabla.NombreColumn)
         End Function
@@ -1637,6 +1665,18 @@ Partial Public Class tallerDBLocalDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetTeléfonoNull()
             Me(Me.tableEstudiantesTabla.TeléfonoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsIdEscuelaNull() As Boolean
+            Return Me.IsNull(Me.tableEstudiantesTabla.IdEscuelaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetIdEscuelaNull()
+            Me(Me.tableEstudiantesTabla.IdEscuelaColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -2286,17 +2326,37 @@ Namespace tallerDBLocalDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(3) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT Estudiantes.*"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM     Estudiantes"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT Identificacion, nombre, apellido, correo, telefono, escuela, contrasena"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"F"& _ 
-                "ROM     Estudiantes"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  (Identificacion = @Identificacion)"
+            Me._commandCollection(1).CommandText = "DELETE FROM Estudiantes"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  (Identificacion = @identificacion)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Identificacion", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "Identificacion", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@identificacion", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "Identificacion", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(2).Connection = Me.Connection
+            Me._commandCollection(2).CommandText = "SELECT Identificacion, nombre, apellido, correo, telefono, escuela, contrasena"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"F"& _ 
+                "ROM     Estudiantes"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  (Identificacion = @Identificacion)"
+            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Identificacion", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "Identificacion", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(3).Connection = Me.Connection
+            Me._commandCollection(3).CommandText = "UPDATE [Estudiantes] SET  [nombre] = @nombre, [apellido] = @apellido, [correo] = "& _ 
+                "@correo, [telefono] = @telefono, [escuela] = @escuela, [contrasena] = @contrasen"& _ 
+                "a WHERE (Identificacion = @Identificacion);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Identificacion, nombre, apel"& _ 
+                "lido, correo, telefono, escuela, contrasena FROM Estudiantes WHERE (Identificaci"& _ 
+                "on = @Identificacion)"
+            Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@nombre", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "nombre", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@apellido", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "apellido", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@correo", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "correo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@telefono", Global.System.Data.SqlDbType.NVarChar, 15, Global.System.Data.ParameterDirection.Input, 0, 0, "telefono", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@escuela", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "escuela", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@contrasena", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "contrasena", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Identificacion", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "Identificacion", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2328,7 +2388,7 @@ Namespace tallerDBLocalDataSetTableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
         Public Overloads Overridable Function GetDataBy(ByVal Identificacion As Long) As tallerDBLocalDataSet.EstudiantesDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            Me.Adapter.SelectCommand = Me.CommandCollection(2)
             Me.Adapter.SelectCommand.Parameters(0).Value = CType(Identificacion,Long)
             Dim dataTable As tallerDBLocalDataSet.EstudiantesDataTable = New tallerDBLocalDataSet.EstudiantesDataTable()
             Me.Adapter.Fill(dataTable)
@@ -2574,6 +2634,82 @@ Namespace tallerDBLocalDataSetTableAdapters
         Public Overloads Overridable Function Update(ByVal nombre As String, ByVal apellido As String, ByVal correo As String, ByVal telefono As String, ByVal escuela As Global.System.Nullable(Of Integer), ByVal contrasena As String, ByVal Original_Identificacion As Long, ByVal Original_nombre As String, ByVal Original_apellido As String, ByVal Original_correo As String, ByVal Original_telefono As String, ByVal Original_escuela As Global.System.Nullable(Of Integer), ByVal Original_contrasena As String) As Integer
             Return Me.Update(Original_Identificacion, nombre, apellido, correo, telefono, escuela, contrasena, Original_Identificacion, Original_nombre, Original_apellido, Original_correo, Original_telefono, Original_escuela, Original_contrasena)
         End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, false)>  _
+        Public Overloads Overridable Function DeleteByIdentificacion(ByVal identificacion As Long) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(1)
+            command.Parameters(0).Value = CType(identificacion,Long)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, false)>  _
+        Public Overloads Overridable Function UpdateEstudiante(ByVal nombre As String, ByVal apellido As String, ByVal correo As String, ByVal telefono As String, ByVal escuela As Global.System.Nullable(Of Integer), ByVal contrasena As String, ByVal Identificacion As Long) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(3)
+            If (nombre Is Nothing) Then
+                command.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(0).Value = CType(nombre,String)
+            End If
+            If (apellido Is Nothing) Then
+                command.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(1).Value = CType(apellido,String)
+            End If
+            If (correo Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("correo")
+            Else
+                command.Parameters(2).Value = CType(correo,String)
+            End If
+            If (telefono Is Nothing) Then
+                command.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(3).Value = CType(telefono,String)
+            End If
+            If (escuela.HasValue = true) Then
+                command.Parameters(4).Value = CType(escuela.Value,Integer)
+            Else
+                command.Parameters(4).Value = Global.System.DBNull.Value
+            End If
+            If (contrasena Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("contrasena")
+            Else
+                command.Parameters(5).Value = CType(contrasena,String)
+            End If
+            command.Parameters(6).Value = CType(Identificacion,Long)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
+        End Function
     End Class
     
     '''<summary>
@@ -2709,6 +2845,7 @@ Namespace tallerDBLocalDataSetTableAdapters
             tableMapping.ColumnMappings.Add("Correo electrónico", "Correo electrónico")
             tableMapping.ColumnMappings.Add("Teléfono", "Teléfono")
             tableMapping.ColumnMappings.Add("Nombre Escuela", "Nombre Escuela")
+            tableMapping.ColumnMappings.Add("IdEscuela", "IdEscuela")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -2722,14 +2859,21 @@ Namespace tallerDBLocalDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT est.Identificacion AS Identificación, est.nombre AS Nombre, est.apellido A"& _ 
                 "S Apellido, est.correo AS [Correo electrónico], est.telefono AS Teléfono, esc.No"& _ 
-                "mbre AS [Nombre Escuela]"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM     Estudiantes AS est INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"              "& _ 
-                "    Escuelas AS esc ON est.escuela = esc.Id"
+                "mbre AS [Nombre Escuela], est.escuela as [IdEscuela]"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM     Estudiantes AS es"& _ 
+                "t INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  Escuelas AS esc ON est.escuela = esc.Id"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "SELECT est.Identificacion AS Identificación, est.nombre AS Nombre, est.apellido A"& _ 
+                "S Apellido, est.correo AS [Correo electrónico], est.telefono AS Teléfono, esc.No"& _ 
+                "mbre AS [Nombre Escuela], est.escuela as [IdEscuela]"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM     Estudiantes AS es"& _ 
+                "t INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  Escuelas AS esc ON est.escuela = esc.Id"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2754,6 +2898,19 @@ Namespace tallerDBLocalDataSetTableAdapters
             Dim dataTable As tallerDBLocalDataSet.EstudiantesTablaDataTable = New tallerDBLocalDataSet.EstudiantesTablaDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy(ByVal dataTable As tallerDBLocalDataSet.EstudiantesTablaDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
         End Function
     End Class
     

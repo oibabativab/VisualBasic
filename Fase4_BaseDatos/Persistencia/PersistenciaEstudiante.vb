@@ -36,6 +36,42 @@ Public Class PersistenciaEstudiante
         Return respuesta
     End Function
 
+    Function ActualizarEstudiante(estudiante As Estudiante) As TransaccionBD
+        Dim mensajes As New List(Of String)
+        Dim resultadoInsertar As Integer = 0
+
+        Dim adapter As New tallerDBLocalDataSetTableAdapters.EstudiantesTableAdapter
+
+        Dim estudianteBD = adapter.GetDataBy(Long.Parse(estudiante.Identificacion))
+        If estudianteBD.Rows.Count().Equals(0) Then
+            mensajes.Add("No existe un estudiante con esta identificación, debe crearlo primero.")
+        Else
+            Try
+                resultadoInsertar = adapter.UpdateEstudiante(
+                                                      estudiante.Nombre,
+                                                      estudiante.Apellido,
+                                                      estudiante.Correo,
+                                                      estudiante.Telefono,
+                                                      estudiante.Escuela,
+                                                      estudiante.Contrasena,
+                                                      estudiante.Identificacion)
+
+
+                If resultadoInsertar.Equals(0) Then
+                    mensajes.Add("No se ha podido actualizar el estudiante")
+                End If
+            Catch ex As Exception
+                mensajes.Add(ex.Message)
+            End Try
+        End If
+
+        Dim respuesta As New TransaccionBD
+        respuesta.Resultado = mensajes.Count.Equals(0)
+        respuesta.Errores = mensajes
+
+        Return respuesta
+    End Function
+
     Shared Function IniciarSesion(identificacion As String, contrasena As String) As TransaccionBD
         Dim resultado As New TransaccionBD
         Dim adapter As New tallerDBLocalDataSetTableAdapters.EstudiantesTableAdapter
@@ -51,6 +87,18 @@ Public Class PersistenciaEstudiante
         End If
 
         resultado.Resultado = resultado.Errores.Count.Equals(0)
+
+        Return resultado
+    End Function
+
+    Shared Function EliminarEstudiante(identificacion As Long) As TransaccionBD
+        Dim adapter As New tallerDBLocalDataSetTableAdapters.EstudiantesTableAdapter
+
+        Dim totalRows = adapter.DeleteByIdentificacion(identificacion)
+        Dim resultado = New TransaccionBD(totalRows > 0)
+        If totalRows = 0 Then
+            resultado.Errores.Add("No se ha podido identificar el estudiante")
+        End If
 
         Return resultado
     End Function

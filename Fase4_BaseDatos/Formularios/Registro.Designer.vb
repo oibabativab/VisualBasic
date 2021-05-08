@@ -56,21 +56,28 @@ Partial Class Registro
         Me.txtPasswordConfirmacion = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.lblPasswordNoCoincide = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dataGridUsers = New System.Windows.Forms.DataGridView()
+        Me.Editar = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.Eliminar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.IdentificaciónDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ApellidoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CorreoElectrónicoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TeléfonoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreEscuelaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IdEscuela = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EstudiantesTablaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TallerDBLocalDataSet1 = New Fase4_BaseDatos.tallerDBLocalDataSet()
         Me.EstudiantesTablaTableAdapter = New Fase4_BaseDatos.tallerDBLocalDataSetTableAdapters.EstudiantesTablaTableAdapter()
+        Me.FillByToolStrip = New System.Windows.Forms.ToolStrip()
+        Me.FillByToolStripButton = New System.Windows.Forms.ToolStripButton()
+        Me.btnNuevoEstudiante = New System.Windows.Forms.Button()
         CType(Me.EscuelasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TallerDBLocalDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dataGridUsers, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EstudiantesTablaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TallerDBLocalDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.FillByToolStrip.SuspendLayout()
         Me.SuspendLayout()
         '
         'cmbEscuela
@@ -368,19 +375,41 @@ Partial Class Registro
         Me.lblPasswordNoCoincide.Text = "Las constraseñas no coinciden"
         Me.lblPasswordNoCoincide.Visible = False
         '
-        'DataGridView1
+        'dataGridUsers
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AutoGenerateColumns = False
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdentificaciónDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.ApellidoDataGridViewTextBoxColumn, Me.CorreoElectrónicoDataGridViewTextBoxColumn, Me.TeléfonoDataGridViewTextBoxColumn, Me.NombreEscuelaDataGridViewTextBoxColumn})
-        Me.DataGridView1.DataSource = Me.EstudiantesTablaBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(27, 362)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersWidth = 51
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(875, 248)
-        Me.DataGridView1.TabIndex = 30
+        Me.dataGridUsers.AllowUserToAddRows = False
+        Me.dataGridUsers.AllowUserToDeleteRows = False
+        Me.dataGridUsers.AutoGenerateColumns = False
+        Me.dataGridUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dataGridUsers.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Editar, Me.Eliminar, Me.IdentificaciónDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.ApellidoDataGridViewTextBoxColumn, Me.CorreoElectrónicoDataGridViewTextBoxColumn, Me.TeléfonoDataGridViewTextBoxColumn, Me.NombreEscuelaDataGridViewTextBoxColumn, Me.IdEscuela})
+        Me.dataGridUsers.DataSource = Me.EstudiantesTablaBindingSource
+        Me.dataGridUsers.Location = New System.Drawing.Point(26, 365)
+        Me.dataGridUsers.Name = "dataGridUsers"
+        Me.dataGridUsers.ReadOnly = True
+        Me.dataGridUsers.RowHeadersWidth = 51
+        Me.dataGridUsers.RowTemplate.Height = 24
+        Me.dataGridUsers.Size = New System.Drawing.Size(875, 248)
+        Me.dataGridUsers.TabIndex = 30
+        '
+        'Editar
+        '
+        Me.Editar.HeaderText = "Editar"
+        Me.Editar.MinimumWidth = 6
+        Me.Editar.Name = "Editar"
+        Me.Editar.ReadOnly = True
+        Me.Editar.Text = "Editar"
+        Me.Editar.UseColumnTextForButtonValue = True
+        Me.Editar.Width = 60
+        '
+        'Eliminar
+        '
+        Me.Eliminar.HeaderText = "Eliminar"
+        Me.Eliminar.MinimumWidth = 6
+        Me.Eliminar.Name = "Eliminar"
+        Me.Eliminar.ReadOnly = True
+        Me.Eliminar.Text = "Eliminar"
+        Me.Eliminar.UseColumnTextForButtonValue = True
+        Me.Eliminar.Width = 60
         '
         'IdentificaciónDataGridViewTextBoxColumn
         '
@@ -389,6 +418,7 @@ Partial Class Registro
         Me.IdentificaciónDataGridViewTextBoxColumn.HeaderText = "Identificación"
         Me.IdentificaciónDataGridViewTextBoxColumn.MinimumWidth = 6
         Me.IdentificaciónDataGridViewTextBoxColumn.Name = "IdentificaciónDataGridViewTextBoxColumn"
+        Me.IdentificaciónDataGridViewTextBoxColumn.ReadOnly = True
         Me.IdentificaciónDataGridViewTextBoxColumn.Width = 119
         '
         'NombreDataGridViewTextBoxColumn
@@ -398,6 +428,7 @@ Partial Class Registro
         Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
         Me.NombreDataGridViewTextBoxColumn.MinimumWidth = 6
         Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
+        Me.NombreDataGridViewTextBoxColumn.ReadOnly = True
         Me.NombreDataGridViewTextBoxColumn.Width = 87
         '
         'ApellidoDataGridViewTextBoxColumn
@@ -407,6 +438,7 @@ Partial Class Registro
         Me.ApellidoDataGridViewTextBoxColumn.HeaderText = "Apellido"
         Me.ApellidoDataGridViewTextBoxColumn.MinimumWidth = 6
         Me.ApellidoDataGridViewTextBoxColumn.Name = "ApellidoDataGridViewTextBoxColumn"
+        Me.ApellidoDataGridViewTextBoxColumn.ReadOnly = True
         Me.ApellidoDataGridViewTextBoxColumn.Width = 87
         '
         'CorreoElectrónicoDataGridViewTextBoxColumn
@@ -416,6 +448,7 @@ Partial Class Registro
         Me.CorreoElectrónicoDataGridViewTextBoxColumn.HeaderText = "Correo electrónico"
         Me.CorreoElectrónicoDataGridViewTextBoxColumn.MinimumWidth = 6
         Me.CorreoElectrónicoDataGridViewTextBoxColumn.Name = "CorreoElectrónicoDataGridViewTextBoxColumn"
+        Me.CorreoElectrónicoDataGridViewTextBoxColumn.ReadOnly = True
         Me.CorreoElectrónicoDataGridViewTextBoxColumn.Width = 140
         '
         'TeléfonoDataGridViewTextBoxColumn
@@ -425,6 +458,7 @@ Partial Class Registro
         Me.TeléfonoDataGridViewTextBoxColumn.HeaderText = "Teléfono"
         Me.TeléfonoDataGridViewTextBoxColumn.MinimumWidth = 6
         Me.TeléfonoDataGridViewTextBoxColumn.Name = "TeléfonoDataGridViewTextBoxColumn"
+        Me.TeléfonoDataGridViewTextBoxColumn.ReadOnly = True
         Me.TeléfonoDataGridViewTextBoxColumn.Width = 93
         '
         'NombreEscuelaDataGridViewTextBoxColumn
@@ -434,8 +468,19 @@ Partial Class Registro
         Me.NombreEscuelaDataGridViewTextBoxColumn.HeaderText = "Nombre Escuela"
         Me.NombreEscuelaDataGridViewTextBoxColumn.MinimumWidth = 6
         Me.NombreEscuelaDataGridViewTextBoxColumn.Name = "NombreEscuelaDataGridViewTextBoxColumn"
+        Me.NombreEscuelaDataGridViewTextBoxColumn.ReadOnly = True
         Me.NombreEscuelaDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.NombreEscuelaDataGridViewTextBoxColumn.Width = 129
+        '
+        'IdEscuela
+        '
+        Me.IdEscuela.DataPropertyName = "IdEscuela"
+        Me.IdEscuela.HeaderText = "IdEscuela"
+        Me.IdEscuela.MinimumWidth = 6
+        Me.IdEscuela.Name = "IdEscuela"
+        Me.IdEscuela.ReadOnly = True
+        Me.IdEscuela.Visible = False
+        Me.IdEscuela.Width = 125
         '
         'EstudiantesTablaBindingSource
         '
@@ -451,12 +496,40 @@ Partial Class Registro
         '
         Me.EstudiantesTablaTableAdapter.ClearBeforeFill = True
         '
+        'FillByToolStrip
+        '
+        Me.FillByToolStrip.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.FillByToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FillByToolStripButton})
+        Me.FillByToolStrip.Location = New System.Drawing.Point(0, 0)
+        Me.FillByToolStrip.Name = "FillByToolStrip"
+        Me.FillByToolStrip.Size = New System.Drawing.Size(931, 27)
+        Me.FillByToolStrip.TabIndex = 31
+        Me.FillByToolStrip.Text = "FillByToolStrip"
+        '
+        'FillByToolStripButton
+        '
+        Me.FillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.FillByToolStripButton.Name = "FillByToolStripButton"
+        Me.FillByToolStripButton.Size = New System.Drawing.Size(48, 24)
+        Me.FillByToolStripButton.Text = "FillBy"
+        '
+        'btnNuevoEstudiante
+        '
+        Me.btnNuevoEstudiante.Location = New System.Drawing.Point(511, 277)
+        Me.btnNuevoEstudiante.Name = "btnNuevoEstudiante"
+        Me.btnNuevoEstudiante.Size = New System.Drawing.Size(119, 30)
+        Me.btnNuevoEstudiante.TabIndex = 32
+        Me.btnNuevoEstudiante.Text = "Nuevo"
+        Me.btnNuevoEstudiante.UseVisualStyleBackColor = True
+        '
         'Registro
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(931, 635)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.btnNuevoEstudiante)
+        Me.Controls.Add(Me.FillByToolStrip)
+        Me.Controls.Add(Me.dataGridUsers)
         Me.Controls.Add(Me.lblPasswordNoCoincide)
         Me.Controls.Add(Me.lblRequeridoPasswordConfirmar)
         Me.Controls.Add(Me.txtPasswordConfirmacion)
@@ -491,9 +564,11 @@ Partial Class Registro
         Me.Text = ":: Registro nuevo estudiante ::.."
         CType(Me.EscuelasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TallerDBLocalDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dataGridUsers, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EstudiantesTablaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TallerDBLocalDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.FillByToolStrip.ResumeLayout(False)
+        Me.FillByToolStrip.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -532,7 +607,7 @@ Partial Class Registro
     Friend WithEvents txtPasswordConfirmacion As TextBox
     Friend WithEvents Label13 As Label
     Friend WithEvents lblPasswordNoCoincide As Label
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dataGridUsers As DataGridView
     Friend WithEvents TallerDBLocalDataSet1 As tallerDBLocalDataSet
     Friend WithEvents EstudiantesTablaBindingSource As BindingSource
     Friend WithEvents EstudiantesTablaTableAdapter As tallerDBLocalDataSetTableAdapters.EstudiantesTablaTableAdapter
@@ -540,10 +615,16 @@ Partial Class Registro
     Friend WithEvents CorreoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents TelefonoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents Expr1DataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents FillByToolStrip As ToolStrip
+    Friend WithEvents FillByToolStripButton As ToolStripButton
+    Friend WithEvents Editar As DataGridViewButtonColumn
+    Friend WithEvents Eliminar As DataGridViewButtonColumn
     Friend WithEvents IdentificaciónDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NombreDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ApellidoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CorreoElectrónicoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents TeléfonoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NombreEscuelaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents IdEscuela As DataGridViewTextBoxColumn
+    Friend WithEvents btnNuevoEstudiante As Button
 End Class
