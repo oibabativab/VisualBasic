@@ -147,7 +147,7 @@
         Return valorBD
     End Function
 
-    Private Sub FillByToolStripButton_Click(sender As Object, e As EventArgs) Handles FillByToolStripButton.Click
+    Private Sub FillByToolStripButton_Click(sender As Object, e As EventArgs)
         Try
             Me.EstudiantesTablaTableAdapter.FillBy(Me.TallerDBLocalDataSet.EstudiantesTabla)
         Catch ex As System.Exception

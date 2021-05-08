@@ -69,15 +69,12 @@ Partial Class Registro
         Me.EstudiantesTablaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TallerDBLocalDataSet1 = New Fase4_BaseDatos.tallerDBLocalDataSet()
         Me.EstudiantesTablaTableAdapter = New Fase4_BaseDatos.tallerDBLocalDataSetTableAdapters.EstudiantesTablaTableAdapter()
-        Me.FillByToolStrip = New System.Windows.Forms.ToolStrip()
-        Me.FillByToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.btnNuevoEstudiante = New System.Windows.Forms.Button()
         CType(Me.EscuelasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TallerDBLocalDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dataGridUsers, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EstudiantesTablaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TallerDBLocalDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.FillByToolStrip.SuspendLayout()
         Me.SuspendLayout()
         '
         'cmbEscuela
@@ -496,23 +493,6 @@ Partial Class Registro
         '
         Me.EstudiantesTablaTableAdapter.ClearBeforeFill = True
         '
-        'FillByToolStrip
-        '
-        Me.FillByToolStrip.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.FillByToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FillByToolStripButton})
-        Me.FillByToolStrip.Location = New System.Drawing.Point(0, 0)
-        Me.FillByToolStrip.Name = "FillByToolStrip"
-        Me.FillByToolStrip.Size = New System.Drawing.Size(931, 27)
-        Me.FillByToolStrip.TabIndex = 31
-        Me.FillByToolStrip.Text = "FillByToolStrip"
-        '
-        'FillByToolStripButton
-        '
-        Me.FillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.FillByToolStripButton.Name = "FillByToolStripButton"
-        Me.FillByToolStripButton.Size = New System.Drawing.Size(48, 24)
-        Me.FillByToolStripButton.Text = "FillBy"
-        '
         'btnNuevoEstudiante
         '
         Me.btnNuevoEstudiante.Location = New System.Drawing.Point(511, 277)
@@ -528,7 +508,6 @@ Partial Class Registro
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(931, 635)
         Me.Controls.Add(Me.btnNuevoEstudiante)
-        Me.Controls.Add(Me.FillByToolStrip)
         Me.Controls.Add(Me.dataGridUsers)
         Me.Controls.Add(Me.lblPasswordNoCoincide)
         Me.Controls.Add(Me.lblRequeridoPasswordConfirmar)
@@ -567,8 +546,6 @@ Partial Class Registro
         CType(Me.dataGridUsers, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EstudiantesTablaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TallerDBLocalDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.FillByToolStrip.ResumeLayout(False)
-        Me.FillByToolStrip.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -615,8 +592,6 @@ Partial Class Registro
     Friend WithEvents CorreoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents TelefonoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents Expr1DataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents FillByToolStrip As ToolStrip
-    Friend WithEvents FillByToolStripButton As ToolStripButton
     Friend WithEvents Editar As DataGridViewButtonColumn
     Friend WithEvents Eliminar As DataGridViewButtonColumn
     Friend WithEvents IdentificaciónDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
