@@ -40,3 +40,74 @@ J:\Study\gitunad\VisualBasic\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.vbproj.Co
 J:\Study\gitunad\VisualBasic\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.exe
 J:\Study\gitunad\VisualBasic\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.xml
 J:\Study\gitunad\VisualBasic\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.pdb
+C:\Users\JESSICA\Desktop\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.vbprojAssemblyReference.cache
+C:\Users\JESSICA\Desktop\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.exe
+C:\Users\JESSICA\Desktop\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.xml
+C:\Users\JESSICA\Desktop\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.pdb
+C:\Users\Toro\Desktop\Visual\Fase4_BaseDatos\bin\Debug\tallerDBLocal.mdf
+C:\Users\Toro\Desktop\Visual\Fase4_BaseDatos\bin\Debug\tallerDBLocal_log.ldf
+C:\Users\Toro\Desktop\Visual\Fase4_BaseDatos\bin\Debug\Fase4_BaseDatos.exe.config
+C:\Users\Toro\Desktop\Visual\Fase4_BaseDatos\bin\Debug\Fase4_BaseDatos.exe
+C:\Users\Toro\Desktop\Visual\Fase4_BaseDatos\bin\Debug\Fase4_BaseDatos.pdb
+C:\Users\Toro\Desktop\Visual\Fase4_BaseDatos\bin\Debug\Fase4_BaseDatos.xml
+C:\Users\Toro\Desktop\Visual\Fase4_BaseDatos\bin\Debug\Interop.WMPLib.dll
+C:\Users\Toro\Desktop\Visual\Fase4_BaseDatos\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Toro\Desktop\Visual\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.vbprojAssemblyReference.cache
+C:\Users\Toro\Desktop\Visual\Fase4_BaseDatos\obj\Debug\Interop.WMPLib.dll
+C:\Users\Toro\Desktop\Visual\Fase4_BaseDatos\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Toro\Desktop\Visual\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.vbproj.ResolveComReference.cache
+C:\Users\Toro\Desktop\Visual\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.Condicionales.resources
+C:\Users\Toro\Desktop\Visual\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.Tema5E.resources
+C:\Users\Toro\Desktop\Visual\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.Tema5D.resources
+C:\Users\Toro\Desktop\Visual\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.Tema5C.resources
+C:\Users\Toro\Desktop\Visual\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.Tema5B.resources
+C:\Users\Toro\Desktop\Visual\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.Tema5A.resources
+C:\Users\Toro\Desktop\Visual\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.Tema5Video.resources
+C:\Users\Toro\Desktop\Visual\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.Main.resources
+C:\Users\Toro\Desktop\Visual\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.Registro.resources
+C:\Users\Toro\Desktop\Visual\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.Resources.resources
+C:\Users\Toro\Desktop\Visual\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.tema2vb.resources
+C:\Users\Toro\Desktop\Visual\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.vbproj.GenerateResource.cache
+C:\Users\Toro\Desktop\Visual\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.vbproj.CoreCompileInputs.cache
+C:\Users\Toro\Desktop\Visual\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.exe
+C:\Users\Toro\Desktop\Visual\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.xml
+C:\Users\Toro\Desktop\Visual\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.pdb
+J:\Study\UNAD\2021-01\Visual Basic Básico\Fase 4\Col2\Fase4_BaseDatos\bin\Debug\tallerDBLocal.mdf
+J:\Study\UNAD\2021-01\Visual Basic Básico\Fase 4\Col2\Fase4_BaseDatos\bin\Debug\tallerDBLocal_log.ldf
+J:\Study\UNAD\2021-01\Visual Basic Básico\Fase 4\Col2\Fase4_BaseDatos\bin\Debug\Imagenes\condicionales.mp4
+J:\Study\UNAD\2021-01\Visual Basic Básico\Fase 4\Col2\Fase4_BaseDatos\bin\Debug\Imagenes\tema 2 interaccion humano com.mp4
+J:\Study\UNAD\2021-01\Visual Basic Básico\Fase 4\Col2\Fase4_BaseDatos\bin\Debug\Fase4_BaseDatos.exe.config
+J:\Study\UNAD\2021-01\Visual Basic Básico\Fase 4\Col2\Fase4_BaseDatos\bin\Debug\Fase4_BaseDatos.exe
+J:\Study\UNAD\2021-01\Visual Basic Básico\Fase 4\Col2\Fase4_BaseDatos\bin\Debug\Fase4_BaseDatos.pdb
+J:\Study\UNAD\2021-01\Visual Basic Básico\Fase 4\Col2\Fase4_BaseDatos\bin\Debug\Fase4_BaseDatos.xml
+J:\Study\UNAD\2021-01\Visual Basic Básico\Fase 4\Col2\Fase4_BaseDatos\bin\Debug\Interop.WMPLib.dll
+J:\Study\UNAD\2021-01\Visual Basic Básico\Fase 4\Col2\Fase4_BaseDatos\bin\Debug\AxInterop.WMPLib.dll
+J:\Study\UNAD\2021-01\Visual Basic Básico\Fase 4\Col2\Fase4_BaseDatos\obj\Debug\Interop.WMPLib.dll
+J:\Study\UNAD\2021-01\Visual Basic Básico\Fase 4\Col2\Fase4_BaseDatos\obj\Debug\AxInterop.WMPLib.dll
+J:\Study\UNAD\2021-01\Visual Basic Básico\Fase 4\Col2\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.vbproj.ResolveComReference.cache
+J:\Study\UNAD\2021-01\Visual Basic Básico\Fase 4\Col2\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.Condicionales.resources
+J:\Study\UNAD\2021-01\Visual Basic Básico\Fase 4\Col2\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.Tema5E.resources
+J:\Study\UNAD\2021-01\Visual Basic Básico\Fase 4\Col2\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.Tema5D.resources
+J:\Study\UNAD\2021-01\Visual Basic Básico\Fase 4\Col2\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.Tema5C.resources
+J:\Study\UNAD\2021-01\Visual Basic Básico\Fase 4\Col2\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.Tema5B.resources
+J:\Study\UNAD\2021-01\Visual Basic Básico\Fase 4\Col2\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.Tema5A.resources
+J:\Study\UNAD\2021-01\Visual Basic Básico\Fase 4\Col2\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.Tema5Video.resources
+J:\Study\UNAD\2021-01\Visual Basic Básico\Fase 4\Col2\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.Main.resources
+J:\Study\UNAD\2021-01\Visual Basic Básico\Fase 4\Col2\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.Registro.resources
+J:\Study\UNAD\2021-01\Visual Basic Básico\Fase 4\Col2\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.Resources.resources
+J:\Study\UNAD\2021-01\Visual Basic Básico\Fase 4\Col2\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.tema2vb.resources
+J:\Study\UNAD\2021-01\Visual Basic Básico\Fase 4\Col2\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.vbproj.GenerateResource.cache
+J:\Study\UNAD\2021-01\Visual Basic Básico\Fase 4\Col2\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.vbproj.CoreCompileInputs.cache
+J:\Study\UNAD\2021-01\Visual Basic Básico\Fase 4\Col2\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.exe
+J:\Study\UNAD\2021-01\Visual Basic Básico\Fase 4\Col2\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.xml
+J:\Study\UNAD\2021-01\Visual Basic Básico\Fase 4\Col2\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.pdb
+J:\Study\UNAD\2021-01\Visual Basic Básico\Fase 4\Col2\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.vbprojAssemblyReference.cache
+J:\Study\gitunad\VisualBasic\Fase4_BaseDatos\bin\Debug\Imagenes\condicionales.mp4
+J:\Study\gitunad\VisualBasic\Fase4_BaseDatos\bin\Debug\Imagenes\tema 2 interaccion humano com.mp4
+J:\Study\gitunad\VisualBasic\Fase4_BaseDatos\bin\Debug\Interop.WMPLib.dll
+J:\Study\gitunad\VisualBasic\Fase4_BaseDatos\bin\Debug\AxInterop.WMPLib.dll
+J:\Study\gitunad\VisualBasic\Fase4_BaseDatos\obj\Debug\Interop.WMPLib.dll
+J:\Study\gitunad\VisualBasic\Fase4_BaseDatos\obj\Debug\AxInterop.WMPLib.dll
+J:\Study\gitunad\VisualBasic\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.vbproj.ResolveComReference.cache
+J:\Study\gitunad\VisualBasic\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.Condicionales.resources
+J:\Study\gitunad\VisualBasic\Fase4_BaseDatos\obj\Debug\Fase4_BaseDatos.tema2vb.resources

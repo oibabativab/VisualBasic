@@ -61,4 +61,15 @@
             End If
         End If
     End Sub
+
+    Private Sub Tema2ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Tema2ToolStripMenuItem.Click
+        tema2vb.Show()
+        Me.Hide()
+
+    End Sub
+
+    Private Sub Tema3CondicionalesParaProgramaciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Tema3CondicionalesParaProgramaciónToolStripMenuItem.Click
+        Condicionales.Show()
+        Me.Hide()
+    End Sub
 End Class

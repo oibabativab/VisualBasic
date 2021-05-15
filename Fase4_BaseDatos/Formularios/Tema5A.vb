@@ -4,5 +4,7 @@
         Console.WriteLine()
     End Sub
 
+    Private Sub Tema5A_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
 End Class
